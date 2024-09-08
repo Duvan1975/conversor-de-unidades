@@ -1,15 +1,54 @@
+/*---Selector Universal---*/
 *{
-    width: 0;
-    padding: 0;
+    margin: 0;/*Elimina el margen predeterminado de todos los elementos para evitar espaciado no deseado*/
+    padding: 0;/*Elimina el relleno predeterminado de todos los elementos*/
+    box-sizing: border-box;/*Evita que las margenes y los bordes de un elemento crezcan más de lo esperado*/
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;/*Convierte al <body> en un contenedor flexible*/
+    justify-content: center;/*Centra horizontalmente los elementos hijos del body*/
+    align-items: center;/*Centra verticalmente los elementos hijos del body*/
+    height: 50vh;/*el <body> ocupará la mitad de la altura de la pantalla.*/
+    background-color:#f0f0f0;
 }
-.container{
-    display: flex;
-    width: 600px;
-    height: 300px;
-    padding: auto;
+.carrusel-container{
+    position: relative;/*permite posicionar elementos hijos de forma absoluta con respecto a este contenedor*/
+    width: 300px;/*Define el ancho del contenedor del carrusel. Esto limitará el espacio visible del carrusel*/
+    overflow: hidden;/*Oculta cualquier contenido que se desborde fuera del área visible del carrusel*/
+}
+.carrusel{
+    display: flex;/*Organizar los elementos hijos en una línea horizontal*/
+    transition: transform 0.7s ease-in-out;/*Aplica una animación suave cuando se mueve el carrusel*/
+}
+.item{
+    min-width: 300px;/*Establece un ancho mínimo asegurando que los elementos tengan el mismo tamaño*/
+    height: 100px;/*Define la altura de cada bloque del carrusel*/
+    background-color: lightblue;
+    display: flex;/*Utiliza flexbox para centrar el contenido horizontalmente dentro del ítem*/
+    justify-content: center;/*Centra el contenido horizontalmente*/
+    align-items: center;/*Centra el contenido verticalmente*/
+    font-size: 2rem;/*Establece el tamaño del texto*/
+    font-weight: bold;/*Aplica negrilla al texto*/
+}
+/*---Estilo de los Botones*/
+button{
+    position: absolute;/*Posiciona el botón de forma absoluta permitiendo colocarlo en cualquier parte*/
+    top: 50%;/*Coloca el botón al 50% de la altura del contenedor*/
+    transform: translateY(-50%);/*Ajusta el botón para que este perfectamente centrado verticalmente*/
+    background-color: rgba(0, 0, 0, 0.5);/*Aplica color de fondo semitransparente (negro)*/
+    color: white;/*Establece color al texto*/
+    border: none;/*Anula el estilo al border*/
+    padding: 10px;/*Establece el relleno al elemento*/
+    cursor: pointer;/*Cambia la forma del cursor al pasar el mouse por encima del elemento*/
+    font-size: 1.5rem;/*Establece el tamaño del texto*/
+    z-index: 1;/*Asegura que el botón quede por encima de otros elementos*/
+}
+.prev{
+    left: 0;/*Ubica el botón al borde izquierdo del contenedor*/
+}
+.next{
+    right: 0;/*Ubica el botón al borde derecho del contenedor*/
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
 }
