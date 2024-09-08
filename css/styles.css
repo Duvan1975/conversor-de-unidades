@@ -8,9 +8,16 @@ body{
     display: flex;/*Convierte al <body> en un contenedor flexible*/
     justify-content: center;/*Centra horizontalmente los elementos hijos del body*/
     align-items: center;/*Centra verticalmente los elementos hijos del body*/
-    height: 50vh;/*el <body> ocupará la mitad de la altura de la pantalla.*/
+    height: 100%;/*el <body> ocupará la mitad de la altura de la pantalla.*/
     background-color:#f0f0f0;
 }
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .carrusel-container{
     position: relative;/*permite posicionar elementos hijos de forma absoluta con respecto a este contenedor*/
     width: 300px;/*Define el ancho del contenedor del carrusel. Esto limitará el espacio visible del carrusel*/
@@ -23,12 +30,20 @@ body{
 .item{
     min-width: 300px;/*Establece un ancho mínimo asegurando que los elementos tengan el mismo tamaño*/
     height: 100px;/*Define la altura de cada bloque del carrusel*/
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
     display: flex;/*Utiliza flexbox para centrar el contenido horizontalmente dentro del ítem*/
     justify-content: center;/*Centra el contenido horizontalmente*/
     align-items: center;/*Centra el contenido verticalmente*/
     font-size: 2rem;/*Establece el tamaño del texto*/
     font-weight: bold;/*Aplica negrilla al texto*/
+    cursor: pointer;
+}
+.item.selected{
+    background-color: rgba(173, 210, 230, 0.7);
+    color: blue;
+}
+.item:hover{
+    background-color: rgb(151, 151, 238);
 }
 /*---Estilo de los Botones*/
 button{
@@ -52,3 +67,28 @@ button{
 button:hover{
     background-color: rgba(0, 0, 0, 0.7);
 }
+/*---Text-Area---*/
+.text-area-container{
+    position: relative;
+    display: flex;/*Para aliñear el selector y el text-area*/
+    align-items: center;
+    width: 100%;
+    margin: 60px;
+}
+.selector{
+    width: 130px;
+    height: 30px;
+    margin-right: 5px;
+    text-align: center;
+}
+.text-area-uno{
+    width: 400px; /* Ancho del textarea */
+    height: 100px; /* Altura del textarea */
+    font-size: 1.5rem; /* Tamaño del texto */
+    padding: 2px; /* Relleno interno del textarea */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto totales */
+    text-align: end;
+    overflow: hidden; /* Oculta el texto que se desborda */
+    resize: none; /* Opcional: desactiva el redimensionamiento del textarea */
+}
+

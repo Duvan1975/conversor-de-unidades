@@ -1,3 +1,6 @@
+const mensaje = document.querySelector(".text-area-uno");
+
+
 let index = 0;
 
 function siguienteElemento(direccion) {
@@ -15,3 +18,28 @@ function siguienteElemento(direccion) {
         carrusel.style.transform = `translateX(${offset}px)`;
     }
 }
+
+// Selecciona todos los ítems
+const items = document.querySelectorAll('.item');
+
+// Agrega un event listener a cada ítem
+items.forEach(item => {
+    item.addEventListener('click', function () {
+        // Remueve la clase 'selected' de todos los ítems
+        items.forEach(i => i.classList.remove('selected'));
+        // Agrega la clase 'selected' al ítem clickeado
+        this.classList.add('selected');
+
+        const valorSeleccionado = this.dataset.value;
+        if (valorSeleccionado === "superficie") {
+            mensaje.textContent = "elejiste superficie";
+            // Puedes hacer algo más con el ítem seleccionado aquí
+            console.log('Seleccionado:', this.dataset.value);
+            
+        }
+
+    });
+
+});
+
+
