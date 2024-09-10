@@ -1,4 +1,7 @@
 const mensaje = document.querySelector(".text-area-uno");
+const optionSuperficie = document.querySelector(".option-superficie");
+
+
 
 
 let index = 0;
@@ -32,6 +35,7 @@ items.forEach(item => {
 
         const valorSeleccionado = this.dataset.value;
         if (valorSeleccionado === "superficie") {
+            optionSuperficie.style.display = 'block';
             mensaje.textContent = "elejiste superficie";
             // Puedes hacer algo más con el ítem seleccionado aquí
             console.log('Seleccionado:', this.dataset.value);
