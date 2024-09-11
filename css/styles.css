@@ -91,8 +91,6 @@ button:hover{
     overflow: hidden; /* Oculta el texto que se desborda */
     resize: none; /* Opcional: desactiva el redimensionamiento del textarea */
 }
-.option-superficie{
-    display: none;
-}
+
 
 
